@@ -5,15 +5,15 @@
 }
 
 html {
-  block-size: 100%;
+  height: 100%;
 }
 
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 1200px;
-  block-size: 100%;
+  width: 1200px;
+  height: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -55,20 +55,19 @@ ol {
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
 }
 
-
 .content {
   display: flex;
   align-items: flex-end;
   gap: 30px;
-  inline-size: 1140px;
+  width: 1140px;
 }
 
 .search-form {
@@ -82,7 +81,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  block-size: 298px;
+  height: 298px;
   overflow-y: auto;
 }
 
@@ -90,21 +89,120 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
 }
-
 
 .result__video-container {
   position: relative;
-  inline-size: 711px;
-  block-size: 386px;
-  margin-block-end: 16px;
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+}*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Кастомный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgb(217 217 217 / 10%);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  width: 1140px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content__list-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 298px;
+  overflow-y: auto;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 100%;
+  height: 100%;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
 }
 
 .result__video {
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -116,7 +214,8 @@ ol {
 }
 
 .content__list-item {
-  padding-inline: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .content__video-card {
@@ -125,20 +224,19 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  min-inline-size: 194px;
-  block-size: 103px;
+  min-width: 194px;
+  height: 103px;
   object-fit: cover;
   object-position: center;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
-  min-inline-size: 0;
+  min-width: 0;
 }
 
-
 .search-form__fieldset-title {
-  margin-block-end: 5px;
+  margin-bottom: 5px;
   font-weight: 400;
   font-size: 18px;
 }
@@ -162,7 +260,7 @@ ol {
 }
 
 .content__video-card-title {
-  margin-block-end: 6px;
+  margin-bottom: 6px;
   overflow: hidden;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
@@ -184,7 +282,6 @@ ol {
   line-clamp: 4;
 }
 
-
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
@@ -198,7 +295,7 @@ ol {
   display: flex;
   align-items: center;
   gap: 5px;
-  inline-size: fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -212,9 +309,10 @@ ol {
 }
 
 .search-form__textfield {
-  inline-size: 225px;
+  width: 225px;
   border: none;
-  border-block: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   padding: 2px 0;
   color: #fff;
   font-family: inherit;
@@ -233,8 +331,8 @@ ol {
 
 .search-form__pseudo-checkbox {
   display: block;
-  inline-size: 19px;
-  block-size: 19px;
+  width: 19px;
+  height: 19px;
   border: 1px solid #fff;
   padding: 1px;
 }
@@ -242,8 +340,8 @@ ol {
 .search-form__pseudo-checkbox::after {
   content: '';
   display: block;
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   background-color: #fff;
 }
@@ -265,11 +363,11 @@ ol {
 
 .search-form__submit-button {
   align-self: flex-end;
-  inline-size: 194px;
+  width: 194px;
 }
 
 .more-button {
-  inline-size: 100%;
+  width: 100%;
 }
 
 .button:hover {
@@ -289,7 +387,213 @@ ol {
   outline-offset: 1px;
 }
 
-/* Шаг 6. Состояния карточек */
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  min-width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content__video-card-title {
+  margin-bottom: 6px;
+  overflow: hidden;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  display: -webkit-box;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 0.9;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label:has(.search-form__checkbox):hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__textfield {
+  width: 225px;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2px 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__pseudo-checkbox {
+  display: block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.button {
+  border: 1px solid #fff;
+  padding: 6px 0;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  width: 194px;
+}
+
+.more-button {
+  width: 100%;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .content__card-link_current {
   background-color: #545050;
 }
