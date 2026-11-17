@@ -294,8 +294,10 @@ ol {
 }
 
 .content__video-card-title {
+  display: block;
   margin-bottom: 6px;
   overflow: hidden;
+  width: 196px;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
